@@ -1,0 +1,24 @@
+<div class="alert-warning">
+  <table class="table table-info" *ngIf="voiture">
+    <thead>
+      <th>Id Voiture</th>
+      <th>Modèle</th>
+      <th>Prix</th>
+      <th>Id Moteur</th>
+      <th>Puissance</th>
+      <th>Cylindrée</th>
+      <th>Carburant</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{voiture.car_id}}</td>
+        <td>{{voiture.model}}</td>
+        <td>{{voiture.price}}</td>
+        <td>{{voiture.engine.id}}</td>
+        <td>{{voiture.engine.puissance}}</td>
+        <td>{{voiture.engine.cylindree}}</td>
+        <td>{{voiture.engine.carburant}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

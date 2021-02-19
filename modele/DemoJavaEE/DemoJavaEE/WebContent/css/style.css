@@ -1,0 +1,75 @@
+body {
+	background: ghostwhite;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    text-align : center;
+}
+
+th {
+	background-color : darkgreen;
+	color : white;
+}
+
+td {
+	background-color : lightyellow;
+}
+
+.tuture {
+	border: thick double #32a1ce;
+}
+
+#form{
+    background-color: white;
+    width: 400px;
+    height: auto;
+    margin: 5px;
+    padding: 15px;
+    border: 3px ridge rgb(215, 218, 40);
+    border-radius: 16px;
+}
+
+#button {
+    background-color: #1410ee;
+    border: none;
+    color: rgb(158, 158, 158);
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+a:link {
+  color: #0080ff;
+}
+
+a:visited {
+  color: #0000a0;
+}
+
+a:focus {
+  border: 1px solid;
+  background: #00cece;
+}
+
+a:hover {
+  border: 1px solid;
+  background: #00ffff;
+}
+
+a:active {
+  background: #0080ff;
+  color: #00ffff;
+}

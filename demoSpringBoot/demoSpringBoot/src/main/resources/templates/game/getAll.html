@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Games</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="alert alert-light">
+    <a href="/games/insert">NOUVEAU JEU</a>
+</div>
+<![CDATA[
+<ul class="aff_msg">
+    <li class="info">
+        <strong>R&eacute;sultats de recherche pour <li class="info">&laquo;<span style="color:#000;">mario kart</span>&raquo;</strong>
+</li>
+</ul>
+<div id="resultat">
+    <h3 class="m_wii">Wii</h3>
+    <ul class="liste_liens">
+        <li><a href="jv://01.jeux/17755.xml">Mario Kart 64</a> (<em>console virtuelle</em>)</li>
+        <li><a href="jv://01.jeux/19173.xml">Mario Kart Wii</a></li>
+        <li><a href="jv://01.jeux/35142.xml">Super Mario Kart</a> (<em>console virtuelle</em>)</li>
+    </ul>
+    <h3 class="m_ds">DS</h3>
+    <ul class="liste_liens">
+        <li><a href="jv://01.jeux/12961.xml">Mario Kart DS</a></li>
+    </ul>
+    <h3 class="m_3ds">3DS</h3>
+    <ul class="liste_liens">
+        <li><a href="jv://01.jeux/37408.xml">Mario Kart 7</a></li>
+    </ul>
+    <h3 class="m_oldies">Oldies</h3>
+    <ul  class="liste_liens">
+        <li><a href="jv://01.jeux/10817.xml">Mario Kart : Double Dash !!</a> - <strong>Gamecube</strong></li>
+        <li><a href="jv://01.jeux/6764.xml">Mario Kart : Super Circuit</a> - <strong>Gameboy Advance</strong></li>
+        <li><a href="jv://01.jeux/1642.xml">Mario Kart 64</a> - <strong>Nintendo 64</strong></li>
+        <li><a href="jv://01.jeux/1895.xml">Super Mario Kart</a> - <strong>Super Nintendo</strong></li>
+    </ul>
+</div>
+]]>
+<table class="table">
+    <thead>
+    <th>ID</th>
+    <th>Nom</th>
+    <th>Nb Joueur</th>
+    <th>Règles</th>
+    <th></th>
+    </thead>
+    <tbody>
+    <tr th:each="game : ${games}">
+        <td th:text="${game.id}"></td>
+        <td th:text="${game.name}"></td>
+        <td th:text="${game.nbJoueurs}"></td>
+        <td>
+            <ul>
+                <li th:each="rule : ${game.rules}">
+                    Nom : <span th:text="${rule.name}"></span>
+                </li>
+            </ul>
+        </td>
+        <td><a th:href="@{/games/one/(id=${game.id})}">Détail</a></td>
+        <td><a th:href="@{/games/update/(id=${game.id})}">Editer</a></td>
+        <td><a th:href="@{/games/delete/(id=${game.id})}">Supprimer</a></td>
+    </tr>
+    </tbody>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<h3>Listes de mes voitures : </h3>
+
+<table class="table table-secondary">
+  <thead>
+    <th>ID</th>
+    <th>Modèle</th>
+    <th>Prix</th>
+    <th>Moteur</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let v of voitures$ | async">
+      <td>{{v.car_id}}</td>
+      <td>{{v.model}}</td>
+      <td>{{v.price}}€</td>
+      <td>moteur n°{{v.engine.id}}</td>
+      <td><a routerLink="/detail/{{v.car_id}}">Détails</a></td>
+    </tr>
+  </tbody>
+</table>
+<router-outlet></router-outlet>
